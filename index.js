@@ -10,7 +10,7 @@ var nowServing = (line) => {
   if (line.length === 0) {
     return "There is nobody waiting to be served!"
   } else {
-    name = line[0];
+    var name = line[0];
     line.splice(0,1);
     return `Currently serving ${name}.`
   }
