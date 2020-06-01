@@ -22,7 +22,7 @@ var currentLine = (line) => {
     lineStr.push(' ' + [i + 1] + '. ' +  line[i])
   }
   if (line.length === 0) {
-    return "the line is currently empty.";
+    return "The line is currently empty.";
   } else {
     return "The line is currently:" + lineStr;
   }
