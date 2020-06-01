@@ -1,21 +1,23 @@
-var katzDeliLine = [];
+var katzDeli = [];
 
 
-function takeANumber(line, name){
+var takeANumber = (line, name) => {
   line.push(name)
-  return `Welcome, ${name}. You are number ${katzDeliLine.indexOf(name) + 1} in line.`;
+  return `Welcome, ${name}.  You are number ${line.length} in line.`;
 };
 
-function nowServing(line) {
+var nowServing = (line) => {
   if (line.length === 0) {
     return "There is nobody waiting to be served!"
   } else {
-    return `now serving: ${line.shift()}`
+    name = line[0];
+    line.splice(0,1);
+    return `Currently serving ${name}.`
   }
 }
 
-function currentLine(line) {
-  lineStr = [];
+var currentLine = (line) => {
+  var lineStr = [];
   for (var i = 0; i < line.length; i++) {
     lineStr.push(' ' + [i + 1] + '. ' +  line[i])
   }
@@ -27,19 +29,21 @@ function currentLine(line) {
 
 }
 
-takeANumber(katzDeliLine, "Ada");
-takeANumber(katzDeliLine, "Grace")
-takeANumber(katzDeliLine, "Kent")
 
-currentLine(katzDeliLine);
+takeANumber(katzDeli, "Ada");
+takeANumber(katzDeli, "Grace");
+takeANumber(katzDeli, "Kent");
 
-nowServing(katzDeliLine);
 
-currentLine(katzDeliLine);
+currentLine(katzDeli);
 
-takeANumber(katzDeliLine, "Matz")
+nowServing(katzDeli);
 
-currentLine(katzDeliLine);
+currentLine(katzDeli);
 
-nowServing(katzDeliLine);
-currentLine(katzDeliLine);
+takeANumber(katzDeli, "Matz")
+
+currentLine(katzDeli);
+
+nowServing(katzDeli);
+currentLine(katzDeli);
